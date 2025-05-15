@@ -1,0 +1,43 @@
+.vs
+.vscode
+
+# Git/Github
+.changeset
+.git
+.github
+
+# Nuxt dev/build outputs
+.output
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Testing
+coverage
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Env files
+.env*
+
+# Tauri files
+native
+
+prisma/*.db
+prisma/*.db-*
+prisma/generated
+
+# Docker files
+.dockerignore
+Dockerfile
