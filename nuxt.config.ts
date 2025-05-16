@@ -92,7 +92,7 @@ export default defineNuxtConfig({
     sources: ['/api/__sitemap__/urls'],
   },
   robots: {
-    disallow: ['/_nuxt/'],
+    disallow: ['/', '/_nuxt/'],
   },
   pwa: {
     scope: '/',

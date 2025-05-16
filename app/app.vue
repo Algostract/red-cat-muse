@@ -56,6 +56,7 @@ useSchemaOrg([
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <AppInstallPrompt />
 </template>
 
 <style>

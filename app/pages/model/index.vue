@@ -3,7 +3,7 @@ const config = useRuntimeConfig()
 
 const { data } = await useFetch('/api/model')
 
-const viewMode = ref('map')
+const viewMode = ref('list')
 const style = `https://api.maptiler.com/maps/streets-v2/style.json?key=${config.public.mapApiKey}`
 const center: [number, number] = [88.4306945, 22.409649]
 const zoom = 16

@@ -1,7 +1,6 @@
 name: 'red-cat-muse-dev'
 services:
   app:
-    # image: 'ghcr.io/shba007/red-cat-muse:latest'
     build: .
     restart: on-failure:3
     env_file:

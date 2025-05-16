@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const title = `Nuxt Template`
-const description = `Nuxt Template Description`
+const title = `RED CAT MUSE`
+const description = `Connect with nearby models with ease`
 const {
   public: { siteUrl },
 } = useRuntimeConfig()
@@ -24,12 +24,12 @@ useSchemaOrg([
   }),
 ])
 
-const { user, session } = useUserSession()
+// const { user, session } = useUserSession()
 </script>
 
 <template>
   <main class="flex h-screen w-screen items-center justify-center">
-    <AuthState>
+    <!-- <AuthState>
       <template #default="{ loggedIn, clear }">
         <div v-if="loggedIn && user">
           <h1>Welcome {{ user.name }}!</h1>
@@ -41,9 +41,10 @@ const { user, session } = useUserSession()
           <NuxtLink to="/auth/google" external>Login with Google</NuxtLink>
         </div>
       </template>
-      <template #placeholder>
+<template #placeholder>
         <button disabled>Loading...</button>
       </template>
-    </AuthState>
+</AuthState> -->
+    <NuxtLink to="/model" class="rounded-full bg-light-500 px-5 py-3 text-black"> Let's get started </NuxtLink>
   </main>
 </template>
