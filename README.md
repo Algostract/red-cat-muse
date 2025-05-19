@@ -15,11 +15,6 @@
   - warning
   - alert
 
-### In github registry add Repo or Org Vars following
-
-- Vars
-  - USERNAME
-
 ## Change the Icons and Screenshots
 
 dir public/pwa
