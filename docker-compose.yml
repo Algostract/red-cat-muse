@@ -10,7 +10,7 @@ services:
 
   typesense:
     image: typesense/typesense:28.0
-    command: --data-dir /data --api-key=${SEARCH_DATABASE_KEY}
+    command: --data-dir /data
     env_file:
       - .env.prod
     volumes:
