@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.4
+
+[compare changes](https://github.com/algostract/red-cat-muse/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- [skip ci] add missing volumes section in docker-compose.prod.yml ([2b90435](https://github.com/algostract/red-cat-muse/commit/2b90435))
+- Update Typesense API key reference and add scheduled tasks for syncing search database ([a6eb983](https://github.com/algostract/red-cat-muse/commit/a6eb983))
+
+### ❤️ Contributors
+
+- Shba007 ([@shba007](https://github.com/shba007))
+
 ## v0.0.3
 
 [compare changes](https://github.com/algostract/red-cat-muse/compare/v0.0.1...v0.0.3)
