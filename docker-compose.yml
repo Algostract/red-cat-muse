@@ -10,11 +10,11 @@ services:
 
   typesense:
     image: typesense/typesense:28.0
-    command: --data-dir /data --api-key=YOUR_TYPESENSE_API_KEY
+    command: --data-dir /data --api-key=${TYPESENSE_API_KEY}
+    env_file:
+      - .env.prod
     volumes:
       - search-db-data:/data
-    ports:
-      - 8108:8108
 
 volumes:
   search-db-data:

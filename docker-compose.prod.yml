@@ -14,6 +14,18 @@ services:
         condition: on-failure
         max_attempts: 3
 
+  typesense:
+    image: typesense/typesense:28.0
+    command: --data-dir /data --api-key=${TYPESENSE_API_KEY}
+    env_file:
+      - .env.prod
+    volumes:
+      - search-db-data:/data
+    ports:
+      - 8108:8108
+    networks:
+      - front-tier
+
 networks:
   front-tier:
     driver: overlay
