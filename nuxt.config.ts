@@ -24,6 +24,12 @@ export default defineNuxtConfig({
   ],
   nitro: {
     compressPublicAssets: true,
+    experimental: {
+      tasks: true,
+    },
+    scheduledTasks: {
+      '*/5 * * * *': ['sync:search-db'],
+    },
   },
   routeRules: {
     '/': { isr: 3600 },
