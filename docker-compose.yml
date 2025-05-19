@@ -7,3 +7,14 @@ services:
       - .env.prod
     ports:
       - 4310:3000
+
+  typesense:
+    image: typesense/typesense:28.0
+    command: --data-dir /data --api-key=YOUR_TYPESENSE_API_KEY
+    volumes:
+      - search-db-data:/data
+    ports:
+      - 8108:8108
+
+volumes:
+  search-db-data:

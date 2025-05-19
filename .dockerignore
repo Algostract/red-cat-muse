@@ -1,16 +1,17 @@
+# Code Editor files
 .vs
 .vscode
 
 # Git/Github
-.changeset
 .git
 .github
 
 # Nuxt dev/build outputs
-.output
+.cache
+.data
 .nuxt
 .nitro
-.cache
+.output
 dist
 
 # Node dependencies
@@ -20,7 +21,7 @@ node_modules
 logs
 *.log
 
-# Testing
+# Test
 coverage
 
 # Misc
@@ -34,6 +35,7 @@ coverage
 # Tauri files
 native
 
+# Prisma files
 prisma/*.db
 prisma/*.db-*
 prisma/generated

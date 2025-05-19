@@ -5,8 +5,16 @@ export interface Model {
   rating: number
   reviewCount: number
   isFeatured?: boolean
-  isFavorite?: boolean
-  coordinate: { lat: number; lng: number }
+  coordinate: [number, number]
+  url: string
+}
+
+export interface SearchParams {
+  query: string
+  queryBy: string
+  filterBy: string
+  sortBy: string
+  perPage: number
 }
 
 /* Server Only */

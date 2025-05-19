@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { Model } from '~~/shared/types'
 
-const props = withDefaults(defineProps<Model>(), {
+interface ExtendedModel extends Model {
+  isFeatured: boolean
+}
+
+const props = withDefaults(defineProps<ExtendedModel>(), {
   image: '/images/model-1.jpg',
   isFeatured: false,
   isFavorite: false,
@@ -11,7 +15,7 @@ const isFavorite = ref(props.isFavorite)
 </script>
 
 <template>
-  <div class="relative isolate grid aspect-[170/227] grid-cols-1 grid-rows-1">
+  <NuxtLink :to="url" class="relative isolate grid aspect-[170/227] grid-cols-1 grid-rows-1">
     <div class="col-span-full col-start-1 row-span-full row-start-1 size-full overflow-clip rounded-md bg-light-500 dark:bg-dark-500">
       <NuxtImg v-if="image" :src="image" :alt="name" :width="340" :height="454" placeholder="/images/model-1.jpg" fit="cover" class="size-full object-cover" />
     </div>
@@ -27,7 +31,7 @@ const isFavorite = ref(props.isFavorite)
       @click="isFavorite = !isFavorite">
       <NuxtIcon name="local:love" class="text-[24px]" />
     </button>
-  </div>
+  </NuxtLink>
 </template>
 
 <style lang="css">

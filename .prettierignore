@@ -1,8 +1,9 @@
 # Nuxt dev/build outputs
-.output
+.cache
+.data
 .nuxt
 .nitro
-.cache
+.output
 dist
 
 # Node dependencies
@@ -25,9 +26,7 @@ logs
 .env*
 !.env.example
 
-# Tauri files
-native
-
+# Prisma files
 prisma/*.db
 prisma/*.db-*
 prisma/generated

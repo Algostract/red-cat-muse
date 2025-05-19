@@ -114,8 +114,8 @@ jobs:
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
             cd ~/${{ env.REPO }}
-            curl -O https://raw.githubusercontent.com/${{ env.REPO }}/refs/heads/main/docker-compose.yml
-            export $(cat .env.prod) && docker stack deploy --compose-file docker-compose.prod.yml red-cat-muse
+            curl -O https://raw.githubusercontent.com/${{ env.REPO }}/refs/heads/main/docker-compose.prod.yml
+            docker stack deploy --compose-file docker-compose.prod.yml red-cat-muse
 
   # build-desktop:
   #   env:

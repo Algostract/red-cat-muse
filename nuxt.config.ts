@@ -46,12 +46,13 @@ export default defineNuxtConfig({
         },
       },
       vapidKey: '',
-      mapApiKey: '',
     },
     private: {
       rootDir: '',
       notionApiKey: '',
       notionDbId: '',
+      vapidKey: '',
+      mapApiKey: '',
     },
   },
   app: {
