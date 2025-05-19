@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.5
+
+[compare changes](https://github.com/algostract/red-cat-muse/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Update Typesense API key and command in docker-compose files ([e22390d](https://github.com/algostract/red-cat-muse/commit/e22390d))
+
+### ❤️ Contributors
+
+- Shba007 ([@shba007](https://github.com/shba007))
+
 ## v0.0.4
 
 [compare changes](https://github.com/algostract/red-cat-muse/compare/v0.0.3...v0.0.4)
