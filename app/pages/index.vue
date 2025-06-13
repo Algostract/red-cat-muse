@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const title = `RED CAT MUSE`
+const title = `Gold Fish Bowl`
 const description = `Connect with nearby models with ease`
 const {
   public: { siteUrl },

@@ -115,7 +115,7 @@ jobs:
           script: |
             cd ~/${{ env.REPO }}
             curl -O https://raw.githubusercontent.com/${{ env.REPO }}/refs/heads/main/docker-compose.prod.yml
-            docker stack deploy --compose-file docker-compose.prod.yml red-cat-muse
+            docker stack deploy --compose-file docker-compose.prod.yml gold-fish-bowl
 
   # build-desktop:
   #   env:
@@ -252,7 +252,7 @@ jobs:
   #       with:
   #         repo_token: ${{ secrets.GITHUB_TOKEN }}
   #         file: native/gen/android/app/build/outputs/apk/universal/release/app-universal-release-unsigned.apk
-  #         asset_name: red-cat-muse_${{ env.VERSION }}_arm64.apk
+  #         asset_name: gold-fish-bowl_${{ env.VERSION }}_arm64.apk
   #         tag: ${{ env.VERSION }}
 
   # deploy-mobile:

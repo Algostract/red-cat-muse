@@ -4,10 +4,12 @@ let notion: Client
 
 export default defineTask({
   meta: {
-    name: 'sync:resource',
+    name: 'sync:search-db',
     description: 'Sync notion resources into search db',
   },
   async run() {
+    console.log('Running Task sync:search-db...')
+
     const config = useRuntimeConfig()
     if (!config.private.notionApiKey) {
       throw new Error('Notion API Key Not Found')
@@ -23,8 +25,8 @@ export default defineTask({
     const models = data.results as unknown as NotionModel[]
 
     const documents = models
-      .map(({ id, properties }): Omit<Model, 'image' | 'isFavorite'> | null => {
-        const title = notionTitleStringify(properties.Name.title)
+      .map(({ id, properties }): Omit<Model, 'image' | 'url' | 'isFavorite'> | null => {
+        const title = notionTextStringify(properties.Name.title)
         return {
           id,
           name: title,
@@ -33,12 +35,21 @@ export default defineTask({
           reviewCount: 0,
           coordinate: [88.4306945 + Math.random() / 10, 22.409649 + Math.random() / 10],
           isFeatured: false,
-          url: `/model/${slugify(title)}_${id}`,
         }
       })
       .filter((item) => item !== null)
 
+    // Check if collection exists
+    let collectionExists = false
     try {
+      await typesense.collections('models').retrieve()
+      collectionExists = true
+    } catch {
+      collectionExists = false
+    }
+
+    // Create collection if it doesn't exist
+    if (!collectionExists) {
       await typesense.collections().create({
         name: 'models',
         fields: [
@@ -51,11 +62,10 @@ export default defineTask({
         ],
         default_sorting_field: 'rating',
       })
-    } catch {
-      console.warn('Collection already exist')
     }
 
-    await typesense.collections('models').documents().import(documents)
+    // Upsert documents (update if exists, create if not)
+    await typesense.collections('models').documents().import(documents, { action: 'upsert' })
 
     return { result: 'success' }
   },

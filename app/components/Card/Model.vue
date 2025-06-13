@@ -2,7 +2,7 @@
 import type { Model } from '~~/shared/types'
 
 interface ExtendedModel extends Model {
-  isFeatured: boolean
+  isFavorite: boolean
 }
 
 const props = withDefaults(defineProps<ExtendedModel>(), {
@@ -15,10 +15,10 @@ const isFavorite = ref(props.isFavorite)
 </script>
 
 <template>
-  <NuxtLink :to="url" class="relative isolate grid aspect-[170/227] grid-cols-1 grid-rows-1">
-    <div class="col-span-full col-start-1 row-span-full row-start-1 size-full overflow-clip rounded-md bg-light-500 dark:bg-dark-500">
-      <NuxtImg v-if="image" :src="image" :alt="name" :width="340" :height="454" placeholder="/images/model-1.jpg" fit="cover" class="size-full object-cover" />
-    </div>
+  <div class="relative isolate grid aspect-[170/227] grid-cols-1 grid-rows-1">
+    <NuxtLink :to="url" class="col-span-full col-start-1 row-span-full row-start-1 size-full overflow-clip rounded-md bg-light-500 dark:bg-dark-500">
+      <NuxtImg v-if="image" :provider="getImgProvider(image)" :src="image" :alt="name" :width="340" :height="454" placeholder="/images/model-1.jpg" fit="cover" class="size-full object-cover" />
+    </NuxtLink>
     <div class="absolute bottom-2 left-2 z-10 flex items-center justify-center gap-1 rounded-full bg-light-500 fill-black p-1 pr-2 text-black">
       <NuxtIcon name="local:star" class="text-[16px]" />
       <span class="-ml-1 text-xs font-semi-bold">{{ rating }}</span>
@@ -31,7 +31,7 @@ const isFavorite = ref(props.isFavorite)
       @click="isFavorite = !isFavorite">
       <NuxtIcon name="local:love" class="text-[24px]" />
     </button>
-  </NuxtLink>
+  </div>
 </template>
 
 <style lang="css">

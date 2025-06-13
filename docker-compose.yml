@@ -1,4 +1,4 @@
-name: 'red-cat-muse-dev'
+name: 'gold-fish-bowl-dev'
 services:
   app:
     build: .

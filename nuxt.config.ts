@@ -79,7 +79,17 @@ export default defineNuxtConfig({
       },
     ],
   },
-  image: {},
+  image: {
+    provider: 'uploadcare',
+    ipx: {},
+    uploadcare: {
+      cdnURL: 'https://ucarecdn.com',
+      quality: 'smart',
+      format: 'auto',
+      progressive: 'yes',
+      strip_meta: 'all',
+    },
+  },
   scripts: {
     registry: {
       googleAnalytics: true,
@@ -91,7 +101,7 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   site: {
-    name: 'RED CAT MUSE',
+    name: 'Gold Fish Bowl',
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
   sitemap: {
@@ -107,9 +117,9 @@ export default defineNuxtConfig({
     injectRegister: 'auto',
     registerType: 'autoUpdate',
     manifest: {
-      name: 'RED CAT MUSE',
-      short_name: 'RED CAT MUSE',
-      description: 'Red Cat Muse Description',
+      name: 'Gold Fish Bowl',
+      short_name: 'Gold Fish Bowl',
+      description: 'Locality‑focused, talent marketplace app',
       theme_color: '#FFFFFF',
       background_color: '#FFFFFF',
       orientation: 'portrait',
