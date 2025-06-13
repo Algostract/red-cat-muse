@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.6
+
+[compare changes](https://github.com/algostract/gold-fish-bowl/compare/v0.0.5...v0.0.6)
+
+### 💅 Refactors
+
+- Rename project from "red-cat-muse" to "gold-fish-bowl" and update related configurations ([09cb1f7](https://github.com/algostract/gold-fish-bowl/commit/09cb1f7))
+
+### ❤️ Contributors
+
+- Shba007 ([@shba007](https://github.com/shba007))
+
 ## v0.0.5
 
 [compare changes](https://github.com/algostract/gold-fish-bowl/compare/v0.0.4...v0.0.5)
